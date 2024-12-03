@@ -82,8 +82,8 @@ export default function LoginForm() {
         {isLoading ? 'LOGGING IN...' : 'LOG IN'}
       </button>
       {error && <p className={styles.error}>{error}</p>}
-      <a href="#" className={styles.forgotPassword}>
-        FORGOT YOUR PASSWORD?
+      <a href="/signIn" className={styles.forgotPassword}>
+        SIGN IN
       </a>
     </form>
   )
