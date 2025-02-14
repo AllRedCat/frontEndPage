@@ -1,5 +1,5 @@
 import styles from './RegisterForm.module.css'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 // interface userCreate {
@@ -98,7 +98,7 @@ export default function RegisterForm() {
             <button type="submit" className={styles.button} disabled={isLoading}>
                 {isLoading ? 'LOGGING IN...' : 'SIGN IN'}
             </button>
-            {error && <p className={styles.error}>{error}</p>}
+            {error && <p className={styles.forgotPassword}>{error}</p>}
         </form>
-    )
-}
+    );
+};

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '../contexts/AuthContext'
 import styles from './LoginForm.module.css'
@@ -23,8 +23,15 @@ export default function LoginForm() {
   const [password, setPassword] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const { token } = useAuth();
 
   const apiUrl = process.env.API_URL
+
+  useEffect(() => {
+    if (token) {
+      router.push('/profile');
+    }
+  }, [token]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
